@@ -32,7 +32,7 @@ public class triggers : MonoBehaviour
         
         if (other.gameObject.tag == "image1")
         {
-            isImageOn = true;
+            image1.enabled = true;
         }
 
         if (other.tag == "image2")

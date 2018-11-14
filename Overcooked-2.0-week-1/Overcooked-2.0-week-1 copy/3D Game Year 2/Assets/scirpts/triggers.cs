@@ -15,6 +15,10 @@ public class triggers : MonoBehaviour
     public Image image5;
     public Image image6;
 
+
+
+    public Renderer rend;
+
     void Start()
     {
         isImageOn = false;
@@ -25,6 +29,11 @@ public class triggers : MonoBehaviour
         image5.enabled = false;
         image6.enabled = false;
 
+
+        rend = GetComponent<Renderer>();
+        rend.enabled = false;
+
+
     }
 
     public void OnTriggerEnter(Collider other)
@@ -33,6 +42,9 @@ public class triggers : MonoBehaviour
         if (other.gameObject.tag == "image1")
         {
             image1.enabled = true;
+          
+            rend.enabled = true;
+
         }
 
         if (other.tag == "image2")

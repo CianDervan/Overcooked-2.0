@@ -14,18 +14,10 @@ public class triggers : MonoBehaviour
     public Image image4;
     public Image image5;
     public Image image6;
-    public Image off;
-    public Image off1;
-    public Image off2;
-    public Image off3;
-    public Image off4;
-    public Image off5;
-    public Image off6;
 
 
-
-
-    public Renderer rend;
+    public Renderer Chemical1;
+    public Renderer Chemical2;
 
     void Start()
     {
@@ -36,109 +28,58 @@ public class triggers : MonoBehaviour
         image4.enabled = false;
         image5.enabled = false;
         image6.enabled = false;
-        off.enabled = true;
-        off1.enabled = true;
-        off2.enabled = true;
-        off3.enabled = true;
-        off4.enabled = true;
-        off5.enabled = true;
-        off6.enabled = true;
 
 
-        rend = GetComponent<Renderer>();
-        rend.enabled = false;
-
+        Chemical1 = GetComponent<Renderer>();
+        Chemical2 = GetComponent<Renderer>();
+        Chemical1.enabled = true;
+        Chemical2.enabled = true;
 
     }
 
     public void OnTriggerEnter(Collider other)
     {
-
+        
         if (other.gameObject.tag == "image1")
         {
             image1.enabled = true;
-
-            rend.enabled = true;
+          
+            Chemical2.enabled = false;
 
         }
 
         if (other.tag == "image2")
         {
             image2.enabled = true;
-
-            
+            Chemical1.enabled = false;
         }
 
         if (other.tag == "image3")
         {
-            image3.enabled = true;
-
-           
+            isImageOn = true;
         }
 
-        if (other.gameObject.tag == "image4")
+        if (other.gameObject.tag  == "image4")
         {
-            image4.enabled = true;
-
-           
+            isImageOn = true;
         }
 
         if (other.tag == "image5")
         {
-            image5.enabled = true;
-
-        
+            isImageOn = true;
         }
 
         if (other.tag == "image6")
         {
-            image6.enabled = true;
-
-            
+            isImageOn = true;
         }
 
         if (other.tag == "off")
         {
-            off.enabled = false;
+            image1.enabled = false;
+            image2.enabled = false;
         }
-
-        if (other.tag == "off")
-        {
-            off1.enabled = false;
-        }
-
-        if (other.tag == "off")
-        {
-            off2.enabled = false;
-        }
-
-        if (other.tag == "off")
-        {
-            off3.enabled = false;
-        }
-
-        if (other.tag == "off")
-        {
-            off3.enabled = false;
-        }
-
-        if (other.tag == "off")
-        {
-            off4.enabled = false;
-        }
-
-        if (other.tag == "off")
-        {
-            off5.enabled = false;
-        }
-
-        if (other.tag == "off")
-        {
-            off6.enabled = false;
-        }
-
-
-
 
     }
+
 }

@@ -43,7 +43,7 @@ public class triggers : MonoBehaviour
         if (other.gameObject.tag == "image1")
         {
             image1.enabled = true;
-          
+
             Chemical2.enabled = false;
 
         }
@@ -52,6 +52,7 @@ public class triggers : MonoBehaviour
         {
             image2.enabled = true;
             Chemical1.enabled = false;
+
         }
 
         if (other.tag == "image3")

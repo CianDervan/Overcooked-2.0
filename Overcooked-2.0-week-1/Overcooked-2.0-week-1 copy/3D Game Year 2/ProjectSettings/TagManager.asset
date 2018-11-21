@@ -11,6 +11,7 @@ TagManager:
   - image5
   - image6
   - off
+  - pickable
   layers:
   - Default
   - TransparentFX

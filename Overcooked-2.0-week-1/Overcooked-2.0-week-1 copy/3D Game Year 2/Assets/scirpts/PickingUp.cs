@@ -24,6 +24,13 @@ public class PickingUp : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+         Vector3.Distance(Chemical1.transform.position, tempParent.transform.position);
+        if (Distance >= 1f){
+            isHolding = false;
+        }
+
+
+
         if(isHolding == true){
 
             Chemical1.GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -51,10 +58,12 @@ public class PickingUp : MonoBehaviour {
     {
 
         if(Input.GetKeyDown(KeyCode.E)){
-
-            isHolding = true;
-            Chemical1.GetComponent<Rigidbody>().useGravity = false;
-            Chemical1.GetComponent<Rigidbody>().detectCollisions = true;
+            if (Distance <= 1f)
+            {
+                isHolding = true;
+                Chemical1.GetComponent<Rigidbody>().useGravity = false;
+                Chemical1.GetComponent<Rigidbody>().detectCollisions = true;
+            }
 
         } if(Input.GetKeyUp(KeyCode.E)){
 

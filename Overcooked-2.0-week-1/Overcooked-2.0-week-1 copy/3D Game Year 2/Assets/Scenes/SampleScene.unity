@@ -113,6 +113,34 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &4212037
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4212038}
+  m_Layer: 0
+  m_Name: Guide
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4212038
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 4212037}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.81, y: 1.89, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1975182747}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &27397461
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +216,7 @@ Transform:
   m_LocalScale: {x: 70.126, y: 70.12598, z: 70.12598}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &27397465
 MonoBehaviour:
@@ -3316,6 +3344,8 @@ GameObject:
   - component: {fileID: 879188906}
   - component: {fileID: 879188905}
   - component: {fileID: 879188908}
+  - component: {fileID: 879188910}
+  - component: {fileID: 879188909}
   m_Layer: 0
   m_Name: Chemical 1
   m_TagString: pickable
@@ -3375,11 +3405,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 879188904}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -13.95, y: -0.63, z: 20}
+  m_LocalPosition: {x: -14.21, y: 0.39, z: 20}
   m_LocalScale: {x: 100.30131, y: 100.301254, z: 100.301254}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &879188908
 BoxCollider:
@@ -3391,8 +3421,38 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.027355654, y: 0.070889406, z: 0.032934006}
-  m_Center: {x: 0.003677812, y: 0.0011467481, z: 0.006467004}
+  m_Size: {x: 0.041193668, y: 0.070889406, z: 0.032934006}
+  m_Center: {x: 0.010596819, y: 0.0011467481, z: 0.006467004}
+--- !u!114 &879188909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 879188904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3517ea294cc7f4d9fb9d1b5dc0753ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canHold: 1
+  Chemical1: {fileID: 879188904}
+  tempParent: {fileID: 4212037}
+  isHolding: 0
+--- !u!54 &879188910
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 879188904}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &897439120
 GameObject:
   m_ObjectHideFlags: 0
@@ -3886,7 +3946,7 @@ GameObject:
   - component: {fileID: 1060269082}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: image2
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8238,7 +8298,7 @@ GameObject:
   - component: {fileID: 1975182743}
   - component: {fileID: 1975182748}
   m_Layer: 0
-  m_Name: basic character  1
+  m_Name: basiccharacter
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8321,6 +8381,7 @@ Transform:
   - {fileID: 1954392848}
   - {fileID: 832892124}
   - {fileID: 545726494}
+  - {fileID: 4212038}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}

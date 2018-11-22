@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PickingUp : MonoBehaviour {
 
@@ -13,11 +15,15 @@ public class PickingUp : MonoBehaviour {
     public bool canHold = true;
     public GameObject Chemical1;
     public GameObject tempParent;
-    public bool isHolding = false; 
+    public bool isHolding1 = false;
+
+    public Image chem1;
 
 
 	// Use this for initialization
 	void Start () {
+
+        chem1.enabled = false;
 		
 	}
 	
@@ -26,16 +32,17 @@ public class PickingUp : MonoBehaviour {
 
          Vector3.Distance(Chemical1.transform.position, tempParent.transform.position);
         if (Distance >= 1f){
-            isHolding = false;
+            isHolding1 = false;
         }
 
 
 
-        if(isHolding == true){
+        if(isHolding1 == true){
 
             Chemical1.GetComponent<Rigidbody>().velocity = Vector3.zero;
             Chemical1.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             Chemical1.transform.SetParent(tempParent.transform);
+            Chemical1.transform.position = tempParent.transform.position;
 
         } else {
 
@@ -54,25 +61,42 @@ public class PickingUp : MonoBehaviour {
 	}
 
 
-     void FixedUpdate()
+    void OnMouseDown()
     {
 
-        if(Input.GetKeyDown(KeyCode.E)){
-            if (Distance <= 1f)
-            {
-                isHolding = true;
-                Chemical1.GetComponent<Rigidbody>().useGravity = false;
-                Chemical1.GetComponent<Rigidbody>().detectCollisions = true;
-            }
 
-        } if(Input.GetKeyUp(KeyCode.E)){
+        if (Distance <= 1f)
+        {
+            isHolding1 = true;
+            Chemical1.GetComponent<Rigidbody>().useGravity = false;
+            Chemical1.GetComponent<Rigidbody>().detectCollisions = true;
+        }
 
-            isHolding = false;
+    
 
+
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.gameObject.tag == "pot"){
+
+            chem1.enabled = true;
+            Destroy(gameObject);
         }
 
     }
 
+    private void OnMouseUp()
+    {
+       
 
+
+            isHolding1 = false;
+
+
+    }
 
 }

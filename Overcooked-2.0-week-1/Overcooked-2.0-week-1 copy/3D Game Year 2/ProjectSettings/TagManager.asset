@@ -12,6 +12,7 @@ TagManager:
   - image6
   - off
   - pickable
+  - pot
   layers:
   - Default
   - TransparentFX

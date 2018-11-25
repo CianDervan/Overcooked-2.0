@@ -13,6 +13,7 @@ TagManager:
   - off
   - pickable
   - pot
+  - Ground
   layers:
   - Default
   - TransparentFX

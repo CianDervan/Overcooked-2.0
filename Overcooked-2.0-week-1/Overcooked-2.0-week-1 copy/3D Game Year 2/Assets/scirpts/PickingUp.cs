@@ -12,9 +12,10 @@ public class PickingUp : MonoBehaviour {
     Vector3 ObjectPos;
     float Distance;
 
-
     public bool canHold = true;
     public GameObject Chemical1;
+    public GameObject Chemical2;
+    public GameObject Chemical3;
     public GameObject tempParent;
     public bool isHolding1 = false;
     public Transform spawnpoint;
@@ -22,11 +23,7 @@ public class PickingUp : MonoBehaviour {
   
     public AudioSource glass;
    
-    
-
-
     public Image chem1;
-
 
     public Text Recipe1;
 
@@ -34,10 +31,7 @@ public class PickingUp : MonoBehaviour {
 	void Start ()
     { 
         chem1.enabled = false;
-
         Recipe1.enabled = true;
-       
-
     }
 
     
@@ -52,37 +46,29 @@ public class PickingUp : MonoBehaviour {
             isHolding1 = false;
         }
 
-
-
         if(isHolding1 == true)
         {
-
             Chemical1.GetComponent<Rigidbody>().velocity = Vector3.zero;
             Chemical1.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             Chemical1.transform.SetParent(tempParent.transform);
             Chemical1.transform.position = tempParent.transform.position;
 
-        } else
-        {
+        }
 
+        else
+        {
             ObjectPos = Chemical1.transform.position;
             Chemical1.transform.SetParent(null);
             Chemical1.GetComponent<Rigidbody>().useGravity = true;
             Chemical1.transform.position = ObjectPos;
 
-
         }
 
-
-
-
-		
 	}
 
 
     void OnMouseDown()
     {
-
 
         if (Distance <= 1f)
         {
@@ -90,10 +76,6 @@ public class PickingUp : MonoBehaviour {
             Chemical1.GetComponent<Rigidbody>().useGravity = false;
             Chemical1.GetComponent<Rigidbody>().detectCollisions = true;
         }
-
-    
-
-
 
     }
 
@@ -110,10 +92,6 @@ public class PickingUp : MonoBehaviour {
 
         if (other.gameObject.tag == "Ground")
         {
-           
-
-
-
             Destroy(gameObject);
             Instantiate(prefab, spawnpoint.position, transform.rotation);
             glass.Play();

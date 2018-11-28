@@ -44,14 +44,13 @@ public class triggers : MonoBehaviour
         {
             image1.enabled = true;
 
-            Chemical2.enabled = false;
 
         }
 
         if (other.tag == "image2")
         {
             image2.enabled = true;
-            Chemical1.enabled = false;
+         
 
         }
 

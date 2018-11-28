@@ -31,11 +31,10 @@ public class PickingUp : MonoBehaviour {
 	void Start ()
     { 
         chem1.enabled = false;
-<<<<<<< HEAD
+
         Recipe1.enabled = true;
 		
-=======
->>>>>>> f40a0cc800faff71115d31b88cbaf3e4d377a2ee
+
 	}
 
     

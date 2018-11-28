@@ -17,13 +17,17 @@ public class PickingUp : MonoBehaviour {
     public GameObject tempParent;
     public bool isHolding1 = false;
 
+
     public Image chem1;
 
+
+    public Text Recipe1;
 
 	// Use this for initialization
 	void Start () {
 
         chem1.enabled = false;
+        Recipe1.enabled = true;
 		
 	}
 	
@@ -84,6 +88,7 @@ public class PickingUp : MonoBehaviour {
         if (other.gameObject.tag == "pot"){
 
             chem1.enabled = true;
+
             Destroy(gameObject);
         }
 

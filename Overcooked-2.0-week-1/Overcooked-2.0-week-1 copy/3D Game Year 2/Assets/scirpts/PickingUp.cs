@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class PickingUp : MonoBehaviour {
 
@@ -18,6 +19,8 @@ public class PickingUp : MonoBehaviour {
     public bool isHolding1 = false;
     public Transform spawnpoint;
     public GameObject prefab;
+  
+    public AudioSource glass;
    
     
 
@@ -33,9 +36,9 @@ public class PickingUp : MonoBehaviour {
         chem1.enabled = false;
 
         Recipe1.enabled = true;
-		
+       
 
-	}
+    }
 
     
 	
@@ -107,10 +110,13 @@ public class PickingUp : MonoBehaviour {
 
         if (other.gameObject.tag == "Ground")
         {
-            chem1.enabled = true;
+           
+
+
 
             Destroy(gameObject);
-             Instantiate(prefab, spawnpoint.position, spawnpoint.rotation);
+            Instantiate(prefab, spawnpoint.position, transform.rotation);
+            glass.Play();
         }
 
     }

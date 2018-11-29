@@ -42,14 +42,14 @@ public class triggers : MonoBehaviour
         
         if (other.gameObject.tag == "image1")
         {
-            image1.enabled = true;
+         
 
 
         }
 
         if (other.tag == "image2")
         {
-            image2.enabled = true;
+
          
 
         }
@@ -76,8 +76,7 @@ public class triggers : MonoBehaviour
 
         if (other.tag == "off")
         {
-            image1.enabled = false;
-            image2.enabled = false;
+          
         }
 
     }

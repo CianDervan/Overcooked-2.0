@@ -87,7 +87,7 @@ public class PickingUp : MonoBehaviour {
         {
             chem1.enabled = true;
             Destroy(gameObject);
-            Instantiate(prefab, spawnpoint.position, spawnpoint.rotation);
+
         }
 
         if (other.gameObject.tag == "Ground")

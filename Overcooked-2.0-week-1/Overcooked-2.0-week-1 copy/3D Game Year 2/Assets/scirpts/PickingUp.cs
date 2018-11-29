@@ -20,6 +20,8 @@ public class PickingUp : MonoBehaviour {
     public bool isHolding1 = false;
     public Transform spawnpoint;
     public GameObject prefab;
+
+    public Animator ingrien1;
   
     public AudioSource glass;
    
@@ -32,6 +34,7 @@ public class PickingUp : MonoBehaviour {
     { 
         chem1.enabled = false;
         Recipe1.enabled = true;
+        ingrien1 = GetComponent<Animator>();
     }
 
     
@@ -75,6 +78,7 @@ public class PickingUp : MonoBehaviour {
             isHolding1 = true;
             Chemical1.GetComponent<Rigidbody>().useGravity = false;
             Chemical1.GetComponent<Rigidbody>().detectCollisions = true;
+            ingrien1.SetBool("Ingriedient1",true);
         }
 
     }
@@ -102,6 +106,7 @@ public class PickingUp : MonoBehaviour {
     private void OnMouseUp()
     {
             isHolding1 = false;
+        ingrien1.SetBool("Ingriedient1", false);
     }
 
 }

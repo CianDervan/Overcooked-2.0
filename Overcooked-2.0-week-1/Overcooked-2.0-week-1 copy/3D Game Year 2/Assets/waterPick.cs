@@ -10,6 +10,8 @@ public class waterPick : MonoBehaviour {
     Vector3 ObjectPos;
     float Distance;
 
+    public Animator waterss;
+
     public GameObject Water;
 
     public bool isHolding3 = false;
@@ -29,9 +31,12 @@ public class waterPick : MonoBehaviour {
     public Text Step1;
 
 
+
+
     void Start(){
         water.enabled = false;
         Step2.enabled = false;
+        waterss = GetComponent<Animator>();
     }
 
 
@@ -74,6 +79,7 @@ public class waterPick : MonoBehaviour {
             isHolding3 = true;
             Water.GetComponent<Rigidbody>().useGravity = false;
             Water.GetComponent<Rigidbody>().detectCollisions = true;
+            waterss.SetBool("water", true);
         }
 
     }

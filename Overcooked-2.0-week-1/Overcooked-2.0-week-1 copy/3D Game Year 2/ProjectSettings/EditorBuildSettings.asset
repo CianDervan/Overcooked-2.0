@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ethonoic Anhydride.unity
     guid: b3362f99bdad7134ba23f266c7dd7b4f
+  - enabled: 1
+    path: Assets/Scenes/Para - Aminophenol.unity
+    guid: 27bced98c5056024dae450ebba5f3795
+  - enabled: 1
+    path: Assets/Scenes/Welcome.unity
+    guid: 349da36846a466f41b1188f95167caa8
   m_configObjects: {}

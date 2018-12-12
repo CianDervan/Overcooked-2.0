@@ -20,6 +20,7 @@ public class pick : MonoBehaviour
     public Image chem2;
 
     public Transform spawnpoint2;
+    public Transform playerspawn;
 
     public GameObject tempParent;
 
@@ -97,7 +98,7 @@ public class pick : MonoBehaviour
             Destroy(gameObject);
 
 
-
+            Instantiate(prefab, playerspawn.position, transform.rotation);
         }
 
         if (other.gameObject.tag == "Ground")

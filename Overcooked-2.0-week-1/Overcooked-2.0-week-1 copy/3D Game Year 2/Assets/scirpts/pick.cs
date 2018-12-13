@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class pick : MonoBehaviour
 {
@@ -95,6 +96,7 @@ public class pick : MonoBehaviour
             Step3.enabled = true;
             step22.enabled = false;
             Complete.enabled = true;
+            SceneManager.LoadScene("level2");
             Destroy(gameObject);
 
 

@@ -749,9 +749,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: ee833b6c-1b44-4d6d-a130-c61c7ffd6950
-  projectName: 3D Game Year 2
-  organizationId: ciandervan
+  cloudProjectId: dd1488dd-453e-4034-81ab-7938790fc70f
+  projectName: 'Cooking with chems '
+  organizationId: james_bryan1
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
